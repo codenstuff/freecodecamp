@@ -1,142 +1,199 @@
+:root {
+    --bg-color: #fff1df;
+}
+
+/****************************
+ *      GLOBAL STYLES       *
+ ****************************/
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     font-size: 62.5%;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    background: white;
-  }
-  
-  #main {
-    display: flex;
-    flex-direction: column;
+}
+
+main {
     align-items: center;
-    margin: 20px;
-    background: #EEE;
+    background: var(--bg-color);
+    border-radius: 8px;
+    flex-direction: column;
+    width: 100%;
+}
+
+h2, blockquote {
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+}
+
+blockquote {
+    margin-top: 40px;
+}
+
+/****************************
+ *        TYPOGRAPHY        *
+ ****************************/
+
+main {
     font-family: monospace, sans serif;
     font-size: 1.6rem;
     line-height: 1.5;
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  #title {
-    margin-top: 50px;
-    text-align: center;
-  }
-  
-  #title h1 {
+}
+
+#title h1 {
     font-size: 5rem;
     font-weight: 600;
-  }
-  
-  #title p {
+}
+    
+#title p {
+    color: #333;
     font-size: 1.8rem;
     font-weight: 400;
-    color: #333;
-  }
-  
-  #img-div {
-    background: white;
-    margin: 20px;
-    padding: 20px;
+}
+
+#timeline li {
+    color: #777;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+#wiki {
+    font-weight: 600;
+}
+
+/****************************
+ *          CONTENT         *
+ ****************************/
+
+body,
+main,
+#img-div {
     display: flex;
+}
+
+body,
+#img-div {
+    background: white;
     justify-content: center;
+}
+
+main,
+#img-div {
+    margin: 20px;
+}
+
+#img-div,
+#timeline li,
+#wiki {
+    padding-top: 20px;
+}
+
+#tribute-info,
+#timeline,
+#wiki {
+    padding-right: 40px;
+}
+
+#img-div,
+image,
+#timeline li {
+    padding-bottom: 20px;
+}
+
+#timeline,
+#wiki {
+    padding-bottom: 30px;
+}
+
+#tribute-info,
+#timeline,
+#wiki {
+    padding-left: 40px;
+}
+
+#title {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#img-div {
+    padding-right: 20px;
+    padding-left: 20px;
     width: 97%;
-  }
-  
-  #image {
+}
+
+#image {
     max-width: 1000px;
     display: block;
     margin: 0 auto;
-    padding-bottom: 20px;
-  }
-  
-  @media (max-width: 1200px){
-    #image {
-      width: 80vw;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    h1 {
-      font-size: 4rem;
-    }
-    p {
-      font-size: 1.4rem;
-    }
-  }
-  
-  #img-caption {
+}
+
+#img-caption {
     text-align: center;
-    font-size: 1.6rem;
-  }
-  
-  #tribute-info {
+}
+
+#tribute-info {
     padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
     width: 600px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  #timeline {
+}
+
+#timeline {
     list-style-type: none;
-    padding: 30px 40px 30px 40px;
+    padding-top: 30px;
     margin-top: 20px;
     margin-bottom: 70px;
     border-left: 5px solid #777;
-  }
-  
-  #timeline li {
-    line-height: 1.5;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #777;
+}
+
+#timeline li {
     transition: 1s;
     position: relative;
-  }
-  
-  #timeline li:hover {
-    color: #000;
-  }
-  
-  #timeline li::before {
+}
+
+#timeline li::before {
     content: "";
     position: absolute;
     top: 23px;
     left: -52px;
     height: 10px;
     width: 10px;
-    background: #EEE;
+    background: var(--bg-color);
     border-radius: 50%;
     border: 5px solid #777;
     transition: background 1s, border-color 1s;
-  }
-  
-  #timeline li:hover::before {
+}
+
+/****************************
+ *         MODIFIERS        *
+ ****************************/
+
+ @media (max-width: 500px) {
+    h1 {
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1200px){
+    #image {
+        width: 80vw;
+    }
+}
+
+ #timeline li:hover {
+    color: #000;
+}
+ 
+ #timeline li:hover::before {
     background: #333;
     border-color: #333;
-  }
-  
-  blockquote {
-    font-style: italic;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  
-  #wiki {
-    padding: 20px 40px 30px 40px;
-    font-weight: 600;
-  }
+}
