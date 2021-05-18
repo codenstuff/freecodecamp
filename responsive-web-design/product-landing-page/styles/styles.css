@@ -67,3 +67,16 @@ body {
 .nav-link:hover {
     text-decoration: 2px underline var(--primary-clr);
 }
+
+/***********************
+ *    FOOTER STYLES    *
+ ***********************/
+
+ footer {
+    background: hsla(0, 0%, 96%, 1);
+    height: 70px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+}
