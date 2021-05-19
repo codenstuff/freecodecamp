@@ -69,10 +69,46 @@ body {
 }
 
 /***********************
+ *    BANNER STYLES    *
+ ***********************/
+
+.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 600px;
+    place-items: center;
+    position: relative;
+}
+
+.banner__img {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.banner__text {
+    grid-area: 1 / 1 / 2 / 2;
+    color: black;
+    width: 400px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    right: 18vw;
+}
+
+.banner__title {
+    font-size: 7rem;
+}
+
+/***********************
  *    FOOTER STYLES    *
  ***********************/
 
- footer {
+footer {
     background: hsla(0, 0%, 96%, 1);
     height: 70px;
     width: 100%;
