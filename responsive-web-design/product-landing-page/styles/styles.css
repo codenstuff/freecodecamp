@@ -65,14 +65,95 @@ body {
 }
 
 .nav-link:hover {
-    text-decoration: 2px underline var(--primary-clr);
+    font-weight: bold;
+    text-decoration: 2px underline black;
 }
+
+/***********************
+ *    BANNER STYLES    *
+ ***********************/
+
+.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 600px;
+    place-items: center;
+    position: relative;
+}
+
+.banner__img {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.banner__text {
+    grid-area: 1 / 1 / 2 / 2;
+    position: absolute;
+    right: 25vw;
+    background: hsla(0, 0%, 100%, .6);
+    border: 5px solid black;
+    padding: 10px;
+}
+
+.banner__title {
+    text-transform: uppercase;
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+/***********************
+ * EXPERIENCES SECTION *
+ ***********************/
+.experiences {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .experiences__title {
+    font-size: 4.2rem;
+    text-align: center;
+    margin-bottom: 4.2rem;
+ }
+
+ .experiences__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    width: 90%;
+ }
+
+ .grid__item {
+    /*border: 1px solid hsla(0,0%,0%,1);*/
+    flex: 1 1 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px hsla(0,0%,0%,.7);
+ }
+
+.item__img {
+    width: 100%;
+    object-position: center;
+}
+
+ .item__text {
+    font-size: 2.8rem;
+    padding: 20px;
+    text-align: center;
+ }
 
 /***********************
  *    FOOTER STYLES    *
  ***********************/
 
- footer {
+footer {
     background: hsla(0, 0%, 96%, 1);
     height: 70px;
     width: 100%;
