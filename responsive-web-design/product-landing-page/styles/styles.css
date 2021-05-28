@@ -25,6 +25,12 @@ main {
     margin-top: 80px;
 }
 
+h3 {
+    font-size: 4.2rem;
+    text-align: center;
+    margin-bottom: 4.2rem;
+}
+
 /***********************
  *    HEADER STYLES    *
  ***********************/
@@ -121,6 +127,7 @@ main {
 /***********************
  * EXPERIENCES SECTION *
  ***********************/
+
 #experiences {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -130,38 +137,105 @@ main {
     align-items: center;
 }
 
- .experiences__title {
-    font-size: 4.2rem;
-    text-align: center;
-    margin-bottom: 4.2rem;
- }
-
- .experiences__grid {
+.experiences__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
     width: 90%;
- }
+}
 
- .grid__item {
+.grid__item {
     /*border: 1px solid hsla(0,0%,0%,1);*/
     flex: 1 1 500px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 5px hsla(0,0%,0%,.7);
- }
+}
 
 .item__img {
     width: 100%;
     object-position: center;
 }
 
- .item__text {
+.item__text {
     font-size: 2.8rem;
     padding: 20px;
     text-align: center;
- }
+}
+
+ /***********************
+ *    PRICING STYLES    *
+ ***********************/
+
+#packages {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.package__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: space-around;
+}
+
+.package__card {
+    flex-shrink: 1;
+    flex-basis: 300px;
+    border: 1px solid hsla(0, 0%, 50%, .5);
+    padding: 20px;
+}
+
+.package__title,
+.package__price,
+.package__text {
+    text-align: center;
+}
+
+.package__title {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.package__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.package__price > span {
+    font-size: 3.2rem;
+    margin-right: 8px;
+    color: #000;
+}
+
+.package__text {
+    font-size: 1.6rem;
+}
+
+li.package {
+    list-style-type: none;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+li.package::before {
+    margin-right: 5px;
+}
+
+li.checked::before {
+    content: "\2714";
+    color: green;
+}
+
+li.unchecked::before {
+    content: "\2716";
+    color: red;
+}
 
 /***********************
  *    FOOTER STYLES    *
