@@ -27,9 +27,9 @@ main {
 }
 
 h3 {
-    font-size: 4.2rem;
+    font-size: 3.6rem;
     text-align: center;
-    margin-bottom: 4.2rem;
+    margin-bottom: 4rem;
 }
 
 /***********************
@@ -197,87 +197,156 @@ h3 {
     text-align: center;
 }
 
+/***********************
+ *     VIDEO STYLES    *
+ ***********************/
+
+ #tips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+ }
+
+ #tips::before {
+     content: "";
+     height: 2px;
+     width: 90vw;
+     background: linear-gradient(90deg, hsla(0,0%,50%,0), hsla(0,0%,50%,.5), hsla(0,0%,50%,0));
+     margin-top: 50px;
+     margin-bottom: 100px;
+ }
+
+ #tips > .text-wrapper {
+     text-align: center;
+     width: 80vw;
+ }
+
+ .tips__title {
+     margin-bottom: 5px;
+     font-size: 3.6rem;
+     padding-left: 5vw;
+     padding-right: 5vw;
+ }
+
+ .tips__text {
+     font-size: 2.2rem;
+ }
+
+#tips > .video-wrapper {
+    margin-top: 20px;
+ }
+
+ #video {
+     max-width: 1120px;
+     max-height: 630px;
+ }
+
+ @media(min-width: 800px) {
+    #video {
+        width: calc(100vw * .8);
+        height: calc(56.25vw * .8);
+    }
+ }
+
+ @media(max-width: 600px) {
+     #video {
+         width: 100vw;
+         height: 56.25vw; /* found this trick on StackOverflow to keep the aspect ratio without explicit pixel values */
+     }
+ }
+
  /***********************
  *    PRICING STYLES    *
  ***********************/
 
-#packages {
+ #packages {
     margin-top: 40px;
     margin-bottom: 40px;
+ }
+
+ #packages::before {
+    display: inline-block;
+    content: "";
+    height: 2px;
+    width: 90vw;
+    background: linear-gradient(90deg, hsla(0,0%,50%,0), hsla(0,0%,50%,.5), hsla(0,0%,50%,0));
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
-.package__grid {
+ .package__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
+ }
 
-.package__card {
+ .package__card {
     flex-shrink: 1;
     border: 2px solid hsla(0, 0%, 50%, .5);
     border-radius: 10px;
     padding: 20px;
-}
+ }
 
-.package__title,
-.package__price,
-.package__text {
+ .package__title,
+ .package__price,
+ .package__text {
     text-align: center;
-}
+ }
 
-.package__title {
+ .package__title {
     font-size: 2.6rem;
     margin-bottom: 10px;
-}
+ }
 
-.package__price {
+ .package__price {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #333;
-}
+ }
 
-.package__price > span {
+ .package__price > span {
     font-size: 3.2rem;
     margin-right: 8px;
     color: #000;
-}
+ }
 
-.package__text {
+ .package__text {
     font-size: 1.6rem;
-}
+ }
 
-li.package {
+ li.package {
     list-style-type: none;
     font-size: 1.6rem;
     line-height: 1.5;
-}
+ }
 
-li.package::before {
+ li.package::before {
     margin-right: 5px;
-}
+ }
 
-li.checked::before {
+ li.checked::before {
     content: "\2714";
     color: green;
-}
+ }
 
-li.unchecked::before {
+ li.unchecked::before {
     content: "\2716";
     color: red;
-}
+ }
 
 /***********************
  *    FOOTER STYLES    *
  ***********************/
 
-footer {
+ footer {
     background: hsla(0, 0%, 96%, 1);
     height: 70px;
     width: 100%;
     display: grid;
     place-items: center;
     font-size: 1.6rem;
-}
+ }
