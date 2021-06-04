@@ -81,27 +81,6 @@ h3 {
     margin-right: 20px;
 }
 
-@media (max-width: 700px) {
-    #header {
-        height: auto;
-    }
-    #header-wrapper {
-        flex-direction: column;
-        gap: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .nav-link {
-        margin-right: 10px;
-    }
-}
-
-@media (max-width: 500px) {
-    #nav-bar {
-        font-size: 1.6rem;
-    }
-}
-
 .nav-link:last-child {
     margin-right: 0;
 }
@@ -143,18 +122,6 @@ h3 {
     text-transform: uppercase;
     font-size: 7vw;
     font-weight: 700;
-}
-
-@media (max-width: 800px) {
-    .banner__img {
-        height: 60vw;
-    }
-}
-
-@media (max-width: 600px) {
-    .banner__img {
-        height: 50vh;
-    }
 }
 
 /***********************
@@ -240,20 +207,6 @@ h3 {
  #video {
      max-width: 1120px;
      max-height: 630px;
- }
-
- @media(min-width: 800px) {
-    #video {
-        width: calc(100vw * .8);
-        height: calc(56.25vw * .8);
-    }
- }
-
- @media(max-width: 600px) {
-     #video {
-         width: 100vw;
-         height: 56.25vw; /* found this trick on StackOverflow to keep the aspect ratio without explicit pixel values */
-     }
  }
 
  /***********************
@@ -349,4 +302,63 @@ h3 {
     display: grid;
     place-items: center;
     font-size: 1.6rem;
+ }
+
+ /***********************
+ *     MEDIA QUERIES    *
+ ***********************/
+
+ @media (max-width: 700px) {
+    #header {
+        height: auto;
+    }
+    #header-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .nav-link {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    #nav-bar {
+        font-size: 1.6rem;
+    }
+}
+
+ /* Limit banner height */
+ @media (max-width: 800px) {
+    .banner__img {
+        height: 60vw;
+    }
+ }
+
+ /* To ensure larger sizes include whitespace left and right of player */
+ @media(min-width: 800px) {
+    #video {
+        width: calc(100vw * .8);
+        height: calc(56.25vw * .8);
+    }
+ }
+
+ /* For mobile phone screen sizes */
+ @media(max-width: 600px) {
+    .banner__img {
+        height: 50vh;
+    }
+    #video {
+        width: 100vw;
+        height: 56.25vw; /* found this trick on StackOverflow to keep the aspect ratio without explicit pixel values */
+    }
+    #tips::before {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    #packages::before {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
  }
