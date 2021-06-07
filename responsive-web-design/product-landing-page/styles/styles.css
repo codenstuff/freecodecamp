@@ -171,6 +171,7 @@ p {
 }
 
 #experiences:target {
+    margin-top: -10px;
     padding-top: 90px;
 }
 
@@ -440,5 +441,9 @@ p {
     #packages::before {
         margin-top: 0;
         margin-bottom: 50px;
+    }
+    #experiences:target {
+        margin-top: -20px;
+        padding-top: 90px;
     }
  }
