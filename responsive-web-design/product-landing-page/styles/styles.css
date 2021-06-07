@@ -170,6 +170,10 @@ p {
     color: rgb(73, 73, 73);
 }
 
+#experiences:target {
+    padding-top: 90px;
+}
+
 /***********************
  *     VIDEO STYLES    *
  ***********************/
@@ -294,6 +298,66 @@ p {
     color: red;
  }
 
+/***************************
+ *    NEWSLETTER STYLES    *
+ ***************************/
+
+ #newsletter {
+     display: grid;
+     justify-content: center;
+     margin-top: 100px;
+     margin-bottom: 50px;
+ }
+
+ #newsletter > p {
+     text-align: center;
+     font-size: 2rem;
+     text-transform: uppercase;
+     font-weight: 700;
+ }
+
+ #form {
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+ }
+
+ #form input {
+     font-size: 1.6rem;
+     padding: 10px;
+ }
+
+ #email {
+     flex: 1 0 50%;
+     border-radius: 0px !important;
+     border-top: 2px solid hsla(0, 0%, 70%, .6);
+     border-left: 2px solid hsla(0, 0%, 70%, .6);
+     border-bottom: 2px solid hsla(0, 0%, 70%, .6);
+     border-right: none;
+ }
+
+ #submit {
+     flex: 1 0 20%;
+     border: none;
+     background: dodgerblue;
+     color: white;
+     transition: .5s;
+ }
+
+ #submit:hover {
+    background: #005494;
+}
+
+ /* styling taken from webaim as the recommended rules for visually hiding labels*/
+ .hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+ }
+
 /***********************
  *    FOOTER STYLES    *
  ***********************/
@@ -323,6 +387,9 @@ p {
     }
     .nav-link {
         margin-right: 10px;
+    }
+    #experiences:target {
+        padding-top: 106px;
     }
 }
 

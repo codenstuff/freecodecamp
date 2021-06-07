@@ -17,14 +17,14 @@
                 </div>
             
                 <nav id="nav-bar">
-                    <a class="nav-link" href="#header">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                     <a class="nav-link" href="#experiences">Experiences</a>
                     <a class="nav-link" href="#packages">Packages</a>
                     <a class="nav-link" href="#newsletter">Newsletter</a>
                 </nav>
             </div>
         </header>
-        <main>
+        <main id="main">
             <div class="banner">
                 <img class="banner__img" src="images/hero-image.jpg" alt="">
                 <div class="banner__text">
@@ -103,11 +103,10 @@
             
             <div id="newsletter">
                 <p>Subscribe to our newsletter</p>
-                <form id="form">
-                    <label for="email">Email
-                        <input id="email" type="email" name="email" placeholder="Email address">
-                    </label>
-                    <button type="submit">Subscribe</button>
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <label class="hidden" for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="Email address" required>
+                    <input id="submit" type="submit" value="Subscribe"></input>
                 </form>
             </div>
         </main>
