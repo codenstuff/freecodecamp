@@ -79,7 +79,56 @@
                 <header>
                     <h2>Basic Shapes</h2>
                 </header>
-                <p></p>
+                <p>There are several basic shapes used for most SVG drawing. The purpose of these shapes is fairly obvious from their names. Some of the parameters that determine their position and size are given, but an element reference would probably contain more accurate and complete descriptions along with other properties that won't be covered in here. However, since they're used in most SVG documents, it's necessary to give them some sort of introduction.</p>
+                <p>To insert a shape, you create an element in the document. Different elements correspond to different shapes and take different parameters to describe the size and position of those shapes. Some are slightly redundant in that they can be created by other shapes, but they're all there for your convenience and to keep your SVG documents as short and as readable as possible. All the basic shapes are shown in the image to the right. The code to generate that looks something like:</p>
+                <h3>Rectangle</h3>
+                <p>The <code>&#x3C;rect&#x3E;</code> element draws a rectangle on the screen. There are 6 basic attributes that control the position and shape of the rectangles on screen. The one on the right has its rx and ry parameters set, giving it rounded corners. If they're not set, they default to 0.</p>
+                <pre>
+                    <code>
+&#x3C;rect x=&#x22;10&#x22; y=&#x22;10&#x22; width=&#x22;30&#x22; height=&#x22;30&#x22;/&#x3E;
+&#x3C;rect x=&#x22;60&#x22; y=&#x22;10&#x22; rx=&#x22;10&#x22; ry=&#x22;10&#x22; width=&#x22;30&#x22; height=&#x22;30&#x22;/&#x3E;
+                    </code>
+                </pre>
+                <code>x</code>
+                <p>The x position of the top left corner of the rectangle.</p>
+                <code>y</code>
+                <p>The y position of the top left corner of the rectangle.</p>
+                <code>width</code>
+                <p>The width of the rectangle</p>
+                <code>height</code>
+                <p>The height of the rectangle</p>
+                <code>rx</code>
+                <p>The x radius of the corners of the rectangle</p>
+                <code>ry</code>
+                <p>The y radius of the corners of the rectangle</p>
+                <h3>Circle</h3>
+                <p>The <code>&#x3C;circle&#x3E;</code> element draws a circle on the screen. It takes 3 basic parameters to determine the shape and size of the element.</p>
+                <pre>
+                    <code>
+&#x3C;circle cx=&#x22;25&#x22; cy=&#x22;75&#x22; r=&#x22;20&#x22;/&#x3E;
+                    </code>
+                </pre>
+                <code>r</code>
+                <p>The radius of the circle.</p>
+                <code>cx</code>
+                <p>The x position of the center of the circle.</p>
+                <code>cy</code>
+                <p>The y position of the center of the circle.</p>
+                <h3>Line</h3>
+                <p>The <code>&#x3C;line&#x3E;</code> element takes the positions of two points as parameters and draws a straight line between them.</p>
+                <pre>
+                    <code>
+&#x3C;line x1=&#x22;10&#x22; x2=&#x22;50&#x22; y1=&#x22;110&#x22; y2=&#x22;150&#x22;/&#x3E;
+                    </code>
+                </pre>
+                <code>x1</code>
+                <p>The x position of point 1.</p>
+                <code>y1</code>
+                <p>The y position of point 1.</p>
+                <code>x2</code>
+                <p>The x position of point 2.</p>
+                <code>y2</code>
+                <p>The y position of point 2.</p>
             </section>
             <section id="Paths" class="main-section">
                 <header>
