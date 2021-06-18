@@ -4,6 +4,7 @@
         <title>SVG Technical Documentation</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
     </head>
     <body>
         <main id="main-doc">
@@ -52,26 +53,20 @@
                 <p>In this article, we examine how Scalable Vector Graphics (SVG) represents the positions and sizes of objects within a drawing context, including coordinate system and what a "pixel" measurement means in a scalable context.</p>
                 <p>For all elements, SVG uses a coordinate system or grid system similar to the one used by canvas (and by a whole lot of other computer drawing routines). That is, the top left corner of the document is considered to be the point (0,0), or point of origin. Positions are then measured in pixels from the top left corner, with the positive x direction being to the right, and the positive y direction being to the bottom. Note that this is slightly different than the way you're taught to graph as a kid (y axis is flipped). However, this is the same way elements in HTML are positioned (By default, LTR documents are considered not the RTL documents which position X from right-to-left).</p>
                 <p>The element</p>
-                <pre>
-                    <code>
-&#x3C;rect x=&#x22;0&#x22; y=&#x22;0&#x22; width=&#x22;100&#x22; height=&#x22;100&#x22; /&#x3E;
-                    </code>
-                </pre>
+                <div class="snip">
+                    <pre><code><span class="tag">&#x3C;rect</span> <span class="attr">x</span>=<span class="val">&#x22;0&#x22;</span> <span class="attr">y</span>=<span class="val">&#x22;0&#x22;</span> <span class="attr">width</span>=<span class="val">&#x22;100&#x22;</span> <span class="attr">height</span>=<span class="val">&#x22;100&#x22;</span> <span class="tag">/&#x3E;</span></code></pre>
+                </div>
                 <p>defines a rectangle from the upper left corner, that spans from there 100px to the right and to the bottom.</p>
                 <h3>What are pixels?</h3>
                 <p>In the most basic case one pixel in an SVG document maps to one pixel on the output device (a.k.a. the screen). But SVG wouldn't have the "Scalable" in its name, if there weren't several possibilities to change this behavior. Much like absolute and relative font sizes in CSS, SVG defines absolute units (ones with a dimensional identifier like "pt" or "cm") and so-called user units, that lack that identifier and are plain numbers.</p>
                 <p>Without further specification, one user unit equals one screen unit. To explicitly change this behavior, there are several possibilities in SVG. We start with the svg root element:</p>
-                <pre>
-                    <code>
-&#x3C;svg width=&#x22;100&#x22; height=&#x22;100&#x22;&#x3E;
-                    </code>
-                </pre>
+                <div class="snip">
+                    <pre><code><span class="tag">&#x3C;svg</span> <span class="attr">width</span>=<span class="val">&#x22;100&#x22;</span> <span class="attr">height</span>=<span class="val">&#x22;100&#x22;</span><span class="tag">&#x3E;</span></code></pre>
+                </div>
                 <p>The above element defines a simple SVG canvas with 100x100px. One user unit equals one screen unit.</p>
-                <pre>
-                    <code>
-&#x3C;svg width=&#x22;200&#x22; height=&#x22;200&#x22; viewBox=&#x22;0 0 100 100&#x22;&#x3E;
-                    </code>
-                </pre>
+                <div class="snip">
+                    <pre><code><span class="tag">&#x3C;svg</span> <span class="attr">width</span>=<span class="val">&#x22;200&#x22;</span> <span class="attr">height</span>=<span class="val">&#x22;200&#x22;</span> <span class="attr">viewBox</span>=<span class="val">&#x22;0 0 100 100&#x22;</span><span class="tag">&#x3E;</span></code></pre>
+                </div>
                 <p>The whole SVG canvas here is 200px by 200px in size. However, the viewBox attribute defines the portion of that canvas to display. These 200x200 pixels display an area that starts at user unit (0,0) and spans 100x100 user units to the right and to the bottom. This effectively zooms in on the 100x100 unit area and enlarges the image to double size.</p>
                 <p>The current mapping (for a single element or the whole image) of user units to screen units is called user coordinate system. Apart from scaling the coordinate system can also be rotated, skewed and flipped. The default user coordinate system maps one user pixel to one device pixel. (However, the device may decide, what it understands as one pixel.) Lengths in the SVG file with specific dimensions, like "in" or "cm", are then calculated in a way that makes them appear 1:1 in the resulting image.</p>
             </section>
@@ -83,12 +78,10 @@
                 <p>To insert a shape, you create an element in the document. Different elements correspond to different shapes and take different parameters to describe the size and position of those shapes. Some are slightly redundant in that they can be created by other shapes, but they're all there for your convenience and to keep your SVG documents as short and as readable as possible. All the basic shapes are shown in the image to the right. The code to generate that looks something like:</p>
                 <h3>Rectangle</h3>
                 <p>The <code>&#x3C;rect&#x3E;</code> element draws a rectangle on the screen. There are 6 basic attributes that control the position and shape of the rectangles on screen. The one on the right has its rx and ry parameters set, giving it rounded corners. If they're not set, they default to 0.</p>
-                <pre>
-                    <code>
-&#x3C;rect x=&#x22;10&#x22; y=&#x22;10&#x22; width=&#x22;30&#x22; height=&#x22;30&#x22;/&#x3E;
-&#x3C;rect x=&#x22;60&#x22; y=&#x22;10&#x22; rx=&#x22;10&#x22; ry=&#x22;10&#x22; width=&#x22;30&#x22; height=&#x22;30&#x22;/&#x3E;
-                    </code>
-                </pre>
+                <div class="snip">
+                    <pre><code><span class="tag">&#x3C;rect</span> <span class="attr">x</span>=<span class="val">&#x22;10&#x22;</span> <span class="attr">y</span>=<span class="val">&#x22;10&#x22;</span> <span class="attr">width</span>=<span class="val">&#x22;30&#x22;</span> <span class="attr">height</span>=<span class="val">&#x22;30&#x22;</span><span class="tag">/&#x3E;</span>
+<span class="tag">&#x3C;rect</span> <span class="attr">x</span>=<span class="val">&#x22;60&#x22;</span> <span class="attr">y</span>=<span class="val">&#x22;10&#x22;</span> <span class="attr">rx</span>=<span class="val">&#x22;10&#x22;</span> <span class="attr">ry</span>=<span class="val">&#x22;10&#x22;</span> <span class="attr">width</span>=<span class="val">&#x22;30&#x22;</span> <span class="attr">height</span>=<span class="val">&#x22;30&#x22;</span><span class="tag">/&#x3E;</span></code></pre>
+                </div>
                 <code>x</code>
                 <p>The x position of the top left corner of the rectangle.</p>
                 <code>y</code>
@@ -103,11 +96,9 @@
                 <p>The y radius of the corners of the rectangle</p>
                 <h3>Circle</h3>
                 <p>The <code>&#x3C;circle&#x3E;</code> element draws a circle on the screen. It takes 3 basic parameters to determine the shape and size of the element.</p>
-                <pre>
-                    <code>
-&#x3C;circle cx=&#x22;25&#x22; cy=&#x22;75&#x22; r=&#x22;20&#x22;/&#x3E;
-                    </code>
-                </pre>
+                <div class="snip">
+                    <pre><code><span class="tag">&#x3C;circle</span> <span class="attr">cx</span>=<span class="val">&#x22;25&#x22;</span> <span class="attr">cy</span>=<span class="val">&#x22;75&#x22;</span> <span class="attr">r</span>=<span class="val">&#x22;20&#x22;</span><span class="tag">/&#x3E;</span></code></pre>
+                </div>
                 <code>r</code>
                 <p>The radius of the circle.</p>
                 <code>cx</code>
@@ -116,11 +107,9 @@
                 <p>The y position of the center of the circle.</p>
                 <h3>Line</h3>
                 <p>The <code>&#x3C;line&#x3E;</code> element takes the positions of two points as parameters and draws a straight line between them.</p>
-                <pre>
-                    <code>
-&#x3C;line x1=&#x22;10&#x22; x2=&#x22;50&#x22; y1=&#x22;110&#x22; y2=&#x22;150&#x22;/&#x3E;
-                    </code>
-                </pre>
+                <div class="snip">
+                    <pre><code><span class="tag">&#x3C;line</span> <span class="attr">x1</span>=<span class="val">&#x22;10&#x22;</span> <span class="attr">x2</span>=<span class="val">&#x22;50&#x22;</span> <span class="attr">y1</span>=<span class="val">&#x22;110&#x22;</span> <span class="attr">y2</span>=<span class="val">&#x22;150&#x22;</span><span class="tag">/&#x3E;</span></code></pre>
+                </div>
                 <code>x1</code>
                 <p>The x position of point 1.</p>
                 <code>y1</code>

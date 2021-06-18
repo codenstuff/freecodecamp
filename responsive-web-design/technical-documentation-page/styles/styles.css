@@ -1,0 +1,44 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+/* Snippet styling */
+.snip {
+    background: #29274C;
+    color: white;
+    padding: 10px;
+}
+
+.tag {
+    color: #8EF9F3;
+}
+
+.attr {
+    color: #FFFD98;
+}
+
+.val {
+    color: #FF1053;
+}
